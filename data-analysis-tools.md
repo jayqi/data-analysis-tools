@@ -12,7 +12,7 @@ date: March 3, 2019 (last updated)
 - Source: <https://github.com/jayqi/data-analysis-tools>
 - Document version (for easier reading): [data-analysis-tools.md](https://github.com/jayqi/data-analysis-tools/blob/master/data-analysis-tools.md)
 
-[![License: CC BY 4.0](https://i.creativecommons.org/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
+[Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/) [![License: CC BY 4.0](https://i.creativecommons.org/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
 
 ---
 
@@ -26,10 +26,10 @@ A survey of general purpose data analysis tools accessible to non-experts.
 
 #### Sections
 
-1. [Analyzing data](#1-analyzing-data)
-2. [Getting data](#2-getting-data)
-3. [Storing data](#3-storing-data)
-4. [Best practices](#4-best-practices)
+1. Analyzing data
+2. Getting data
+3. Storing data
+4. Best practices
 
 ---
 
