@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Jay Qi">
+  <title>Overview of Data Analysis Tools</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="https://revealjs.com/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Overview of Data Analysis Tools</h1>
+  <p class="author">Jay Qi</p>
+  <p class="date">March 3, 2019 (last update)</p>
+</section>
+
+<section id="before-we-begin" class="slide level2">
+<h2>Before we begin</h2>
+<p><strong>This content is open source!</strong></p>
+<ul>
+<li>This deck: FILL ME IN</li>
+<li>Source code: <a href="https://github.com/jayqi/data-analysis-tools" class="uri">https://github.com/jayqi/data-analysis-tools</a></li>
+<li>Markdown version (for reference): FILL ME IN</li>
+</ul>
+</section>
+<section id="what-is-this-about" class="slide level2">
+<h2>What is this about?</h2>
+<p>A survey of general purpose data analysis tools accessible to non-experts.</p>
+<ul>
+<li>What are the common tools?</li>
+<li>When are they best suited?</li>
+<li>Emphasis on free or open-source</li>
+</ul>
+<h4 id="topics-covered">Topics covered</h4>
+<ol type="1">
+<li>Analyzing data</li>
+<li>Getting data</li>
+<li>Storing data</li>
+<li>Best practices</li>
+</ol>
+</section>
+<section id="analyzing-data" class="slide level2">
+<h2>1. Analyzing data</h2>
+<p>When you already have some data that you want to get some value out of.</p>
+<p>Topics:</p>
+<ul>
+<li>Spreadsheet applications</li>
+<li>Programming / Code</li>
+<li>Business intelligence suites</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="spreadsheet-applications">Spreadsheet applications</h3>
+<p>Ubiquitous; graphical interface; shallow learning curve for easy tasks</p>
+<ul>
+<li><strong>Microsoft Excel</strong> – not free or open source, but is everywhere and familiar</li>
+<li><strong>Google Sheets</strong> – not open source, but free and easy to share/collaborate, if you trust your data to be in Google’s cloud</li>
+<li><strong><a href="https://www.libreoffice.org/">LibreOffice</a> Calc</strong> – the most well-maintained open source office software suite</li>
+</ul>
+<h4 id="what-its-good-for">What it’s good for</h4>
+<ul>
+<li>Small enough datasets to not give your computer a stroke</li>
+<li>You need to eyeball your dataset all at once</li>
+<li>If formatting, colored shading, or borders are useful for highlighting something</li>
+<li>Manual data entry</li>
+</ul>
+<h4 id="beware">Beware</h4>
+<ul>
+<li><strong>Autoformatting</strong>: this can change values in your data, especially with timestamps. Tips for avoiding:
+<ul>
+<li>When opening files, use <code>Import &gt; Import as a Text File</code></li>
+<li>Formatting cells as <code>Text</code>. Must be done <em>before</em> you enter or paste data.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="programming-code">Programming / Code</h3>
+<p>Writing code to load and process data</p>
+<h4 id="what-its-good-for-1">What it’s good for</h4>
+<ul>
+<li>Large datasets you don’t need to look at all at once</li>
+<li>Repetitive computations or transformations</li>
+<li>Distributing/sharing code to collaborate, or so someone else can reproduce your work</li>
+<li>Extensible to do more advanced stuff, e.g., build apps, interactive visualizations, machine learning</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="which-programming-language">Which programming language?</h3>
+<h4 id="recommended-ecosystems">Recommended ecosystems</h4>
+<ul>
+<li>R</li>
+<li>Python</li>
+</ul>
+<h4 id="key-advantages">Key advantages</h4>
+<ul>
+<li>Free</li>
+<li>Extensible (enormous number of open source libraries online)</li>
+<li>Easy to find resources and examples (Google, blogs, open tutorials and videos, StackOverflow)</li>
+</ul>
+<h4 id="which-one">Which one?</h4>
+<p>For most purposes, they are fairly equivalent. Python will be more comfortable to people with software engineering/development experience.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="r">R</h3>
+<h4 id="common-libraries">Common libraries</h4>
+<p>A lot of common data frame and stats functionality are part of base or system packages.</p>
+<ul>
+<li>Advanced data frames: <code>dplyr</code> (<a href="https://github.com/rstudio/cheatsheets/raw/master/source/pdfs/data-transformation-cheatsheet.pdf">cheat sheet</a>), <code>data.table</code> (<a href="https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf">cheat sheet</a>)</li>
+<li>Reshaping: <code>tidyr</code></li>
+<li>Plotting: <code>ggplot2</code> (<a href="https://www.rstudio.com/wp-content/uploads/2016/11/ggplot2-cheatsheet-2.1.pdf">cheat sheet</a>), <code>plotly</code></li>
+<li>Time series: <code>zoo</code></li>
+<li>GIS/Maps: <code>leaflet</code> (<a href="https://rstudio.github.io/leaflet/">tutorials</a>), <code>sp</code>, <code>sf</code> (<a href="https://www.jessesadler.com/post/gis-with-r-intro/">GIS in R</a>)</li>
+<li>Natural language processing: <code>tm</code>, <code>quanteda</code>, <code>tidytext</code> (<a href="https://www.tidytextmining.com/">book</a>)</li>
+<li>Machine learning: <code>caret</code></li>
+</ul>
+<h4 id="recommended-way-to-get-it-programming-environment">Recommended way to get it / programming environment</h4>
+<ul>
+<li><a href="https://www.rstudio.com/products/rstudio/#Desktop">RStudio</a></li>
+</ul>
+<h4 id="additional-resources">Additional resources</h4>
+<p>Many great cheat sheets from RStudio: <a href="https://www.rstudio.com/resources/cheatsheets/">link</a></p>
+</section>
+<section class="slide level2">
+
+<h3 id="python">Python</h3>
+<h4 id="common-libraries-1">Common libraries</h4>
+<ul>
+<li>Data frames: <code>pandas</code> (<a href="https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf">cheat sheet</a>)</li>
+<li>Math and stats: <code>numpy</code>, <code>scipy</code></li>
+<li>Plotting: <code>matplotlib</code>, <code>seaborn</code>, <code>plotly</code></li>
+<li>GIS/Maps: <code>folium</code>, <code>shapely</code></li>
+<li>Natural language processing: <code>nltk</code>, <code>spaCy</code></li>
+<li>Machine learning: <code>scikit-learn</code></li>
+</ul>
+<h4 id="recommended-way-to-get-it">Recommended way to get it</h4>
+<ul>
+<li><a href="https://www.continuum.io/downloads">Anaconda</a> – handles installing Python and any packages</li>
+</ul>
+<h4 id="recommended-programming-environment">Recommended programming environment</h4>
+<ul>
+<li><a href="http://jupyter.org/">Jupyter Notebook</a> – can render natively on GitHub</li>
+<li><a href="https://pythonhosted.org/spyder/">Spyder</a> – open source IDE, like MATLAB and RStudio</li>
+<li><a href="https://www.jetbrains.com/pycharm/">PyCharm</a> – commercial IDE, free version available</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="other-things-youll-hear-about-proprietary-packages">Other things you’ll hear about: Proprietary packages</h3>
+<p>Powerful, paid software packages with modules for common statistical analyses. Have both some graphical interface tools and programming languages.</p>
+<ul>
+<li>SAS</li>
+<li>SPSS (IBM)</li>
+<li>MATLAB</li>
+</ul>
+<p>Expensive, but often used by large companies or research institutions in many industries.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="other-things-youll-hear-about-advanced-tools">Other things you’ll hear about: Advanced tools</h3>
+<ul>
+<li><strong>Julia</strong> – open source language; fast computations, but more for power users that care about high performance.</li>
+<li><strong>Scala</strong> – runs on Java virtual machine; fast, strongly typed; good if you’re deploying at scale</li>
+<li><strong>Hadoop</strong> – distributed file system for “big data”</li>
+<li><strong>Spark</strong> – distributed computing framework for “big data”</li>
+</ul>
+<h4 id="big-data">Big data?</h4>
+<p>You only need “big data” tools (i.e., distributed computing) if your situation involves</p>
+<ul>
+<li>High <strong>volume</strong>: you can’t fit it on the hard drive or in memory on one machine</li>
+<li>High <strong>velocity</strong>: you need the results of analyses instantaneously as new data is created</li>
+</ul>
+<p>Most practical situations don’t have those requirements and don’t need “big data” tools.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="business-intelligence-suites">Business intelligence suites</h3>
+<p>Paid software designed for business users to quickly perform analytics and create visualizations and dashboards.</p>
+<ul>
+<li>Tableau</li>
+<li>Power BI (Microsoft)</li>
+</ul>
+<p>Costs money to get subscriptions or licenses. Often has free, restricted versions. Some have license donation programs for nonprofits, e.g. <a href="https://www.tableau.com/foundation/license-donations">Tableau</a>.</p>
+<p>Potential option if you need straightforward, professional-looking visualizations, but you don’t have time to build up expertise or deal with customization for programming options.</p>
+</section>
+<section id="getting-data" class="slide level2">
+<h2>2. Getting Data</h2>
+<p>Getting data can range in difficulty. If you’re lucky, you can click a link and download a file.</p>
+<p>We’ll cover:</p>
+<ul>
+<li>Hitting APIs</li>
+<li>Scraping webpages</li>
+</ul>
+<h4 id="some-useful-places-to-look-for-datasets">Some useful places to look for datasets</h4>
+<ul>
+<li>Institutional data portals (e.g., <a href="https://data.cityofchicago.org">City of Chicago</a>, <a href="https://www.data.gov/">data.gov</a>)</li>
+<li><a href="https://www.quandl.com/search?query=">Quandl</a> – economic and financial data (some free, some paid)</li>
+<li><a href="https://public.enigma.com/">Enigma Public</a> – platform with mirrors of government datasets</li>
+<li><a href="https://data.world/">data.world</a> – social network for people to upload datasets</li>
+<li><a href="https://www.kaggle.com/">Kaggle</a> – datasets used for competitions or uploaded by users</li>
+</ul>
+<p>These websites often have online viewers, easy download buttons, APIs, and special packages to download directly in R, Python, etc.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="what-are-apis">What are APIs?</h3>
+<p>Many websites have REST API endpoints.</p>
+<ul>
+<li>API: application programming interface – entry point for interacting with the website with programming.</li>
+<li>REST: representational state transfer – a particular design pattern that has become standard. It means you can expect the API to be structured and behave in a certain way.</li>
+</ul>
+<p>Key thing to know is that they have a standardized design, and you can use a <strong>GET HTTP request</strong> to retrieve data from the API endpoint.</p>
+<p>Example: Chicago Building Permits <code>https://data.cityofchicago.org/resource/9pkb-4fbf.json?_permit_type=PERMIT - RENOVATION/ALTERATION</code></p>
+<p>When to use APIs:</p>
+<ul>
+<li>The data is frequently changing, and you want to get the most up-to-date</li>
+<li>You only need a subset of the full dataset. You can put a query in the endpoint and get back only what you need.</li>
+</ul>
+<p>Usually data is <code>json</code> format but some websites have <code>csv</code> options.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="getting-data-from-apis">Getting data from APIs</h3>
+<h4 id="first-check-for-special-packages">First: Check for special packages</h4>
+<p>Sometimes someone (often the website owner) has created packages (“clients”) to make it easier query data through the API. This can make things a lot easier!</p>
+<p>Examples:</p>
+<ul>
+<li><a href="https://github.com/Chicago/RSocrata"><code>RSocrata</code></a> (R), <a href="https://pypi.python.org/pypi/sodapy"><code>sodapy</code></a> (Python) – clients for Socrata platform used by many government data portals</li>
+<li><code>Quandl</code> (<a href="https://www.quandl.com/tools/r">R</a>) (<a href="https://www.quandl.com/tools/python">Python</a>) – clients for Quandl API</li>
+<li><a href="https://www.rdocumentation.org/packages/twitteR/versions/1.1.9"><code>twitteR</code></a> (R), <a href="https://github.com/bear/python-twitter"><code>python-twitter</code></a> (Python) – clients for Twitter API</li>
+<li><a href="https://cran.r-project.org/package=acs"><code>acs</code></a> (R), <a href="https://github.com/datamade/census"><code>census</code></a> (Python) – client for U.S. Census data</li>
+</ul>
+<h4 id="in-general">In general:</h4>
+<p>You just need a way to make GET requests. Recommended:</p>
+<ul>
+<li><strong>Browser</strong>: if you just need one dataset, you can go to URL and save as text</li>
+<li><strong>Python</strong>: <a href="http://docs.python-requests.org/en/master/"><code>requests</code></a> library</li>
+<li><strong>R</strong>: <a href="https://cran.r-project.org/web/packages/httr/vignettes/quickstart.html"><code>httr</code></a> library</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="web-scraping">Web scraping</h3>
+<p>Sometimes there is no API and you need to get unstructured data from webpages directly. There are some tools for downloading webpages and parsing the raw HTML to extract data.</p>
+<p>R:</p>
+<ul>
+<li><a href="https://github.com/hadley/rvest">rvest</a></li>
+</ul>
+<p>Python:</p>
+<ul>
+<li><a href="http://docs.python-requests.org/en/master/">requests</a> – for reading pages</li>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup4</a> – for parsing HTML</li>
+</ul>
+</section>
+<section id="storing-data" class="slide level2">
+<h2>2. Storing data</h2>
+<p>How to store your data so you can use it again later.</p>
+<ul>
+<li>Flat files</li>
+<li>Databases</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="flat-files">Flat files</h3>
+<p>Generally will need to be read into memory entirely to access.</p>
+<h4 id="csv-comma-separated-values">.csv (comma-separated values)</h4>
+<ul>
+<li>Used for tabular data</li>
+<li>Can basically be universally read by any tool</li>
+<li>Stored in plain text, so you can examine it without special program if needed</li>
+</ul>
+<h4 id="json-javascript-object-notation">.json (JavaScript object notation)</h4>
+<ul>
+<li>For unstructured data</li>
+<li>Used widely for passing data over the web or between applications</li>
+<li>Stored in plain text, so you can examine it without special program if needed</li>
+</ul>
+<h4 id="others">Others</h4>
+<ul>
+<li><strong>Excel files (.xls / .xlsx)</strong> – if formatting is important to save, but otherwise avoid it because it can be harder to load</li>
+<li><strong>binary formats</strong> – preserves datatypes, faster read/write than .csv, but larger file size. Includes: <code>.rds</code> in R, <code>pickle</code> in Python, <code>feather</code></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="databases">Databases</h3>
+<p>A <strong>database management systems</strong> (a.k.a. database software) stores your data and lets users interact with it to query or update. Broad categories:</p>
+<ul>
+<li><strong>Relational</strong> (<strong>SQL</strong>) – row-oriented tabular data.
+<ul>
+<li>Examples: PostgreSQL, SQLite (<a href="https://www.sqlite.org/whentouse.html">which to use</a>)</li>
+</ul></li>
+<li><strong>NoSQL</strong> – high-volume data, high-velocity data, and/or flexible data structure (unstructured or non-tabular structure).
+<ul>
+<li>Types and examples: Document (MongoDB, Elasticsearch), Key-value (Redis), Column-oriented (Cassandra), Graph (Neo4j)</li>
+</ul></li>
+</ul>
+<p><strong>Use SQL if you can. Most data will work with SQL.</strong> Easy-to-use, easy to find expertise, data consistency guarantees.</p>
+<h4 id="do-i-need-a-database">Do I need a database?</h4>
+<p>Databases have benefits but come with overhead. You might want to use one if you:</p>
+<ul>
+<li>Require multiple people to write to it at the same time</li>
+<li>Need to maintain this dataset over time and integrity is important</li>
+<li>Are reading and writing data frequently because it’s supporting an application</li>
+<li>Have a large dataset and typically only typically look at a subset</li>
+</ul>
+</section>
+<section id="best-practices" class="slide level2">
+<h2>4. Best practices</h2>
+<p>Following best practices helps you get things done efficiently, make it easier to collaborate, and contributes to long-term success.</p>
+<ul>
+<li>Documentation</li>
+<li>Reproducibility</li>
+<li>Version control</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="documentation">Documentation</h3>
+<p>Important because:</p>
+<ul>
+<li>Makes collaboration easier / makes collaboration possible</li>
+<li>You will remember when you did when you come back to it later</li>
+<li>Reduces mistakes</li>
+</ul>
+<p>What to document:</p>
+<ul>
+<li>Why you made certain decisions</li>
+<li>Key results</li>
+<li>Comment your code</li>
+<li>Write instructions for how to use your code (README, package documentation)</li>
+</ul>
+<p>Tools that make this easier:</p>
+<ul>
+<li>Rmarkdown – easily write reports with embedded R code and results (<a href="http://rmarkdown.rstudio.com/lesson-1.html">tutorial</a>)</li>
+<li>R Notebooks (RStudio) and Jupyter Notebooks – interactive coding that doubles as presentable report</li>
+<li>Roxygen2 (R) (<a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">vignette</a>), Python docstrings (<a href="http://www.pythonforbeginners.com/basics/python-docstrings">tutorial</a>) – for documenting packages you write</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="reproducibility">Reproducibility</h3>
+<p>Someone else should be able to use the <strong>same code</strong> and <strong>same data</strong> to generate the <strong>same results</strong>.</p>
+<p>This is a critical part of <strong>science</strong> part of data science. Others can understand what you did and check that it makes sense. It’s also important for coming back to an analysis later.</p>
+<p>One reason why documentation is important.</p>
+<p>Package dependency management is important part. Tools: - R: <code>packrat</code> - Python: <code>anaconda</code></p>
+</section>
+<section class="slide level2">
+
+<h3 id="version-control">Version Control</h3>
+<h4 id="code">Code</h4>
+<ul>
+<li><strong>Git</strong> is version-control software – the overwhelmingly most popular option. (<a href="https://try.github.io/levels/1/challenges/1">interactive tutorial</a>)</li>
+<li><strong>GitHub</strong> is a website that hosts (generally public) Git repositories. It’s where people share open-source code. (<a href="https://guides.github.com/activities/hello-world/">tutorial</a>)</li>
+</ul>
+<h4 id="project-documentation">Project documentation</h4>
+<p>Wikis are great for collaborative project documentation and usually have built-in revision tracking.</p>
+<ul>
+<li><strong>GitHub built-in wiki</strong> – comes with each repo. For public, open-source projects.</li>
+<li><strong>MediaWiki</strong> – the software that powers Wikipedia.</li>
+<li><strong>DokuWiki</strong> – another popular, open-source wiki software</li>
+</ul>
+<h4 id="data">Data</h4>
+<ul>
+<li>Git is for code, not for data.</li>
+<li>Not a solved problem. Active area of work. (Recently popular: <a href="https://github.com/pachyderm/pachyderm">Pachyderm</a>)</li>
+</ul>
+</section>
+<section id="final-tips" class="slide level2">
+<h2>Final tips</h2>
+<p>When planning a project and selecting tools, keep in mind:</p>
+<ol type="1">
+<li><strong>Always try Google</strong> – If you need something, try googling it. Chances are that something will turn up.</li>
+<li><strong>Keep it simple</strong> – Simple systems usually work better than complicated ones.</li>
+<li><strong>Minimum viable products</strong> – Learn quickly. Test your ideas. Fail fast.</li>
+<li><strong>Consider sustainability</strong> – Sustain value over time. Product needs to be easily maintainable (possibly by others). Following best practices are important for this.</li>
+</ol>
+</section>
+    </div>
+  </div>
+
+  <script src="https://revealjs.com/lib/js/head.min.js"></script>
+  <script src="https://revealjs.com/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

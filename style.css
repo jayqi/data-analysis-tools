@@ -1,0 +1,82 @@
+.reveal p.date {
+    font-size: 24px !important;
+}
+
+.reveal section.level2 {
+    text-align: left !important;
+    font-size: 24px !important;
+}
+
+.reveal h1, h2, h3 {
+    color: #3498DB !important; /* Blue */
+    text-align: center !important;
+}
+
+.reveal h2 {
+    font-size: 2.4em !important;
+}
+
+.reveal h3 {
+    font-size: 1.8em !important;
+}
+
+.reveal h4 {
+    color: #F39C12 !important; /* Orange */
+    margin-top: 20px !important;
+}
+
+.reveal strong {
+    color: #00bc8c !important; /* Green */
+}
+
+.reveal a:link, a:visited, a:active {
+    text-decoration: underline;
+    color: #bf78d5; /* Lavender */
+}
+
+.reveal a:hover, a:active {
+    text-decoration: none;
+    color: #375a7f; /* Dark Blue */
+}
+
+/*
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+body {
+    font-family: 'Roboto';
+    color: #abb2be
+}
+h1, h2, h3, h4 {
+    font-family: 'Roboto';
+    font-weight: normal;
+    color: #cb9769;
+}
+
+strong {
+    color: #99c27c;
+}
+
+.remark-code, .remark-inline-code {
+    font-family: 'Roboto Mono';
+    color: #5ab6c1;
+}
+
+.remark-slide-content h1 {font-size: 42px; }
+.remark-slide-content h2 {font-size: 30px; }
+.remark-slide-content h3 {font-size: 30px; }
+.remark-slide-content h4 {font-size: 24px; }
+.remark-slide-content h2, h3 {border-bottom: 2px solid #cb9769;}
+
+.remark-slide-content{
+    background-color: #21252B;
+}
+
+a:link, a:visited, a:active {
+    color: #bf78d5;
+    text-decoration: none;
+}
+a:hover, a:active {
+    text-decoration: underline;
+}
+*/
