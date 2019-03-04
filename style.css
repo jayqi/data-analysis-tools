@@ -32,6 +32,10 @@
     color: #00bc8c !important; /* Green */
 }
 
+.reveal code {
+    color: #5ab6c1 !important; /* Blue */
+}
+
 .reveal a:link, a:visited, a:active {
     text-decoration: underline;
     color: #bf78d5; /* Lavender */
@@ -40,8 +44,4 @@
 .reveal a:hover, a:active {
     text-decoration: none;
     color: #375a7f; /* Dark Blue */
-}
-
-.reveal code {
-    color: #5ab6c1 !important; /* Blue */
 }

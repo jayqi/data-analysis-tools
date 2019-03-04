@@ -56,7 +56,7 @@
 <li>When are they best suited?</li>
 <li>Emphasis on free or open-source</li>
 </ul>
-<h4 id="topics-covered">Topics covered</h4>
+<h4 id="sections">Sections</h4>
 <ol type="1">
 <li>Analyzing data</li>
 <li>Getting data</li>
@@ -124,9 +124,10 @@
 <li>Free</li>
 <li>Extensible (enormous number of open source libraries online)</li>
 <li>Easy to find resources and examples (Google, blogs, open tutorials and videos, StackOverflow)</li>
+<li>Large, active communities (online, meetups, conferences)</li>
 </ul>
 <h4 id="which-one">Which one?</h4>
-<p>For most purposes, they are fairly equivalent. Python will be more comfortable to people with software engineering/development experience.</p>
+<p>For most purposes, they are fairly equivalent. Python will be more comfortable to people with software engineering/development experience. R may feel more comfortable to statisticians or social scientists.</p>
 </section>
 <section class="slide level2">
 
@@ -140,7 +141,7 @@
 <li>Time series: <code>zoo</code></li>
 <li>GIS/Maps: <code>leaflet</code> (<a href="https://rstudio.github.io/leaflet/">tutorials</a>), <code>sp</code>, <code>sf</code> (<a href="https://www.jessesadler.com/post/gis-with-r-intro/">GIS in R</a>)</li>
 <li>Natural language processing: <code>tm</code>, <code>quanteda</code>, <code>tidytext</code> (<a href="https://www.tidytextmining.com/">book</a>)</li>
-<li>Machine learning: <code>caret</code></li>
+<li>Machine learning: <code>caret</code>, <code>parsnip</code></li>
 </ul>
 <h4 id="recommended-way-to-get-it-programming-environment">Recommended way to get it / programming environment</h4>
 <ul>
@@ -181,21 +182,21 @@
 <li>SPSS (IBM)</li>
 <li>MATLAB</li>
 </ul>
-<p>Expensive, but often used by large companies or research institutions in many industries.</p>
+<p>Great software but <strong>expensive</strong> and <strong>not accessible</strong> to the public. Often used by large companies or research institutions.</p>
 </section>
 <section class="slide level2">
 
 <h3 id="other-things-youll-hear-about-advanced-tools">Other things you’ll hear about: Advanced tools</h3>
 <ul>
-<li><strong>Julia</strong> – open source language; fast computations, but more for power users that care about high performance.</li>
+<li><strong>Julia</strong> – open source language; fast computations, but best suited for high-performance computing</li>
 <li><strong>Scala</strong> – runs on Java virtual machine; fast, strongly typed; good if you’re deploying at scale</li>
 <li><strong>Hadoop</strong> – distributed file system for “big data”</li>
 <li><strong>Spark</strong> – distributed computing framework for “big data”</li>
 </ul>
-<h4 id="big-data">Big data?</h4>
+<h4 id="big-data">“Big data”?</h4>
 <p>You only need “big data” tools (i.e., distributed computing) if your situation involves</p>
 <ul>
-<li>High <strong>volume</strong>: you can’t fit it on the hard drive or in memory on one machine</li>
+<li>High <strong>volume</strong>: you can’t fit it on disk or in memory on one machine</li>
 <li>High <strong>velocity</strong>: you need the results of analyses instantaneously as new data is created</li>
 </ul>
 <p>Most practical situations don’t have those requirements and don’t need “big data” tools.</p>
@@ -240,7 +241,7 @@
 <li>REST: representational state transfer – a particular design pattern that has become standard. It means you can expect the API to be structured and behave in a certain way.</li>
 </ul>
 <p>Key thing to know is that they have a standardized design, and you can use a <strong>GET HTTP request</strong> to retrieve data from the API endpoint.</p>
-<p>Example: Chicago Building Permits <code>https://data.cityofchicago.org/resource/9pkb-4fbf.json?_permit_type=PERMIT - RENOVATION/ALTERATION</code></p>
+<p>Example: Chicago Building Permits: <a href="https://data.cityofchicago.org/resource/9pkb-4fbf.json?_permit_type=PERMIT%20-%20RENOVATION/ALTERATION">https://data.cityofchicago.org/resource/9pkb-4fbf.json?_permit_type=PERMIT - RENOVATION/ALTERATION</a></p>
 <p>When to use APIs:</p>
 <ul>
 <li>The data is frequently changing, and you want to get the most up-to-date</li>
@@ -373,7 +374,7 @@
 </ul>
 <p>Tools that make this easier:</p>
 <ul>
-<li>Cookie Cutter Data Science – directory template for projects [(docs)(https://drivendata.github.io/cookiecutter-data-science/)]</li>
+<li>Cookie Cutter Data Science – directory template for projects [<a href="https://drivendata.github.io/cookiecutter-data-science/">docs</a>]</li>
 <li>Rmarkdown – easily write reports with embedded R code and results (<a href="http://rmarkdown.rstudio.com/lesson-1.html">tutorial</a>)</li>
 <li>R Notebooks (RStudio) and Jupyter Notebooks – interactive coding that doubles as presentable report</li>
 <li>Roxygen2 (R) (<a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">vignette</a>), Python docstrings (<a href="http://www.pythonforbeginners.com/basics/python-docstrings">tutorial</a>) – for documenting packages you write</li>

@@ -1,7 +1,7 @@
 ---
 author: Jay Qi
 title: Overview of Data Analysis Tools
-date: March 3, 2019 (last update)
+date: March 3, 2019 (last updated)
 ---
 
 ## Before we begin
@@ -22,7 +22,7 @@ A survey of general purpose data analysis tools accessible to non-experts.
 - When are they best suited?
 - Emphasis on free or open-source
 
-#### Topics covered
+#### Sections
 
 1. Analyzing data
 2. Getting data
@@ -91,10 +91,11 @@ Writing code to load and process data
 - Free
 - Extensible (enormous number of open source libraries online)
 - Easy to find resources and examples (Google, blogs, open tutorials and videos, StackOverflow)
+- Large, active communities (online, meetups, conferences)
 
 #### Which one?
 
-For most purposes, they are fairly equivalent. Python will be more comfortable to people with software engineering/development experience.
+For most purposes, they are fairly equivalent. Python will be more comfortable to people with software engineering/development experience. R may feel more comfortable to statisticians or social scientists.
 
 ---
 
@@ -110,7 +111,7 @@ A lot of common data frame and stats functionality are part of base or system pa
 - Time series: `zoo`
 - GIS/Maps: `leaflet` ([tutorials](https://rstudio.github.io/leaflet/)), `sp`, `sf` ([GIS in R](https://www.jessesadler.com/post/gis-with-r-intro/))
 - Natural language processing: `tm`, `quanteda`, `tidytext` ([book](https://www.tidytextmining.com/))
-- Machine learning: `caret`
+- Machine learning: `caret`, `parsnip`
 
 #### Recommended way to get it / programming environment
 
@@ -153,22 +154,22 @@ Powerful, paid software packages with modules for common statistical analyses. H
 - SPSS (IBM)
 - MATLAB
 
-Expensive, but often used by large companies or research institutions in many industries.
+Great software but **expensive** and **not accessible** to the public. Often used by large companies or research institutions.
 
 ---
 
 ### Other things you'll hear about: Advanced tools
 
-- **Julia** -- open source language; fast computations, but more for power users that care about high performance.
+- **Julia** -- open source language; fast computations, but best suited for high-performance computing
 - **Scala** -- runs on Java virtual machine; fast, strongly typed; good if you're deploying at scale
 - **Hadoop** -- distributed file system for "big data"
 - **Spark** -- distributed computing framework for "big data"
 
-#### Big data?
+#### "Big data"?
 
 You only need "big data" tools (i.e., distributed computing) if your situation involves
 
-- High **volume**: you can't fit it on the hard drive or in memory on one machine
+- High **volume**: you can't fit it on disk or in memory on one machine
 - High **velocity**: you need the results of analyses instantaneously as new data is created
 
 Most practical situations don't have those requirements and don't need "big data" tools.
@@ -221,14 +222,13 @@ Many websites have REST API endpoints.
 
 Key thing to know is that they have a standardized design, and you can use a **GET HTTP request** to retrieve data from the API endpoint.
 
-Example: Chicago Building Permits
-`https://data.cityofchicago.org/resource/9pkb-4fbf.json?_permit_type=PERMIT - RENOVATION/ALTERATION`
+Example: Chicago Building Permits: [`https://data.cityofchicago.org/resource/9pkb-4fbf.json?_permit_type=PERMIT - RENOVATION/ALTERATION`](https://data.cityofchicago.org/resource/9pkb-4fbf.json?_permit_type=PERMIT - RENOVATION/ALTERATION)
 
 
 When to use APIs:
 
 - The data is frequently changing, and you want to get the most up-to-date
-- You only need a subset of the full dataset. You can put a query in the endpoint and get back only what you need.
+- You only need a subset of the full dataset. Often, you can put a query in the endpoint and get back only what you need.
 
 Usually data is `json` format but some websites have `csv` options.
 
@@ -365,7 +365,7 @@ What to document:
 
 Tools that make this easier:
 
-- Cookie Cutter Data Science -- directory template for projects [(docs)(https://drivendata.github.io/cookiecutter-data-science/)]
+- Cookie Cutter Data Science -- directory template for projects [[docs](https://drivendata.github.io/cookiecutter-data-science/)]
 - Rmarkdown -- easily write reports with embedded R code and results ([tutorial](http://rmarkdown.rstudio.com/lesson-1.html))
 - R Notebooks (RStudio) and Jupyter Notebooks -- interactive coding that doubles as presentable report
 - Roxygen2 (R) ([vignette](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html)), Python docstrings ([tutorial](http://www.pythonforbeginners.com/basics/python-docstrings)) -- for documenting packages you write
@@ -404,7 +404,7 @@ Wikis are great for collaborative project documentation and usually have built-i
 
 #### Data
 
-- Git is for code, not for data.
+- **Git is for code, not for data.**
 - Not a solved problem. Active area of work. Some advanced tools:
   - [Git Large File Storage](https://git-lfs.github.com/)
   - [Pachyderm](https://github.com/pachyderm/pachyderm)
@@ -418,5 +418,5 @@ When planning a project and selecting tools, keep in mind:
 
 1. **Always try Google** -- If you need something, try googling it. Chances are that something will turn up.
 2. **Keep it simple** -- Simple systems usually work better than complicated ones.
-3. **Minimum viable products** -- Learn quickly. Test your ideas. Fail fast.
-4. **Consider sustainability** -- Sustain value over time. Product needs to be easily maintainable (possibly by others). Following best practices are important for this.
+3. **Speed to value and iteration** -- Learn quickly. Test your ideas. Fail fast.
+4. **Consider sustainability** -- Product needs to be easily maintainable (possibly by others). Following best practices are important for this.
