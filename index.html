@@ -36,7 +36,7 @@
 <section id="title-slide">
   <h1 class="title">Overview of Data Analysis Tools</h1>
   <p class="author">Jay Qi</p>
-  <p class="date">March 3, 2019 (last update)</p>
+  <p class="date">March 3, 2019 (last updated)</p>
 </section>
 
 <section id="before-we-begin" class="slide level2">
@@ -44,9 +44,10 @@
 <p><strong>This content is open source!</strong></p>
 <ul>
 <li>This deck: <a href="https://jayqi.github.io/data-analysis-tools/" class="uri">https://jayqi.github.io/data-analysis-tools/</a></li>
-<li>Source code: <a href="https://github.com/jayqi/data-analysis-tools" class="uri">https://github.com/jayqi/data-analysis-tools</a></li>
+<li>Source: <a href="https://github.com/jayqi/data-analysis-tools" class="uri">https://github.com/jayqi/data-analysis-tools</a></li>
 <li>Document version (for easier reading): <a href="https://github.com/jayqi/data-analysis-tools/blob/master/data-analysis-tools.md">data-analysis-tools.md</a></li>
 </ul>
+<p><a href="https://creativecommons.org/licenses/by/4.0/"><img data-src="https://i.creativecommons.org/l/by/4.0/88x31.png" alt="License: CC BY 4.0" /></a></p>
 </section>
 <section id="what-is-this-about" class="slide level2">
 <h2>What is this about?</h2>
@@ -58,16 +59,16 @@
 </ul>
 <h4 id="sections">Sections</h4>
 <ol type="1">
-<li>Analyzing data</li>
-<li>Getting data</li>
-<li>Storing data</li>
-<li>Best practices</li>
+<li><a href="#/1-analyzing-data">Analyzing data</a></li>
+<li><a href="#/2-getting-data">Getting data</a></li>
+<li><a href="#/3-storing-data">Storing data</a></li>
+<li><a href="#/4-best-practices">Best practices</a></li>
 </ol>
 </section>
 <section id="analyzing-data" class="slide level2">
 <h2>1. Analyzing data</h2>
 <p>When you already have some data that you want to get some value out of.</p>
-<p>Topics:</p>
+<h4 id="topics">Topics:</h4>
 <ul>
 <li>Spreadsheet applications</li>
 <li>Programming / Code</li>
@@ -215,14 +216,17 @@
 <section id="getting-data" class="slide level2">
 <h2>2. Getting Data</h2>
 <p>Getting data can range in difficulty. If you’re lucky, you can click a link and download a file.</p>
-<p>We’ll cover:</p>
+<h4 id="topics-1">Topics</h4>
 <ul>
 <li>Common data portals</li>
 <li>Hitting APIs</li>
 <li>Scraping webpages</li>
+<li>Data pipelining tools</li>
 </ul>
-<p>We’ll finish up with a quick overview of data pipelining tools.</p>
-<h4 id="some-useful-places-to-look-for-datasets">Some useful places to look for datasets</h4>
+</section>
+<section class="slide level2">
+
+<h3 id="data-portals">Data Portals</h3>
 <ul>
 <li>Institutional data portals (e.g., <a href="https://data.cityofchicago.org">City of Chicago</a>, <a href="https://www.data.gov/">data.gov</a>)</li>
 <li><a href="https://www.quandl.com/search?query=">Quandl</a> – economic and financial data (some free, some paid)</li>
@@ -241,11 +245,11 @@
 <li>REST: representational state transfer – a particular design pattern that has become standard. It means you can expect the API to be structured and behave in a certain way.</li>
 </ul>
 <p>Key thing to know is that they have a standardized design, and you can use a <strong>GET HTTP request</strong> to retrieve data from the API endpoint.</p>
-<p>Example: Chicago Building Permits: <a href="https://data.cityofchicago.org/resource/9pkb-4fbf.json?_permit_type=PERMIT%20-%20RENOVATION/ALTERATION">https://data.cityofchicago.org/resource/9pkb-4fbf.json?_permit_type=PERMIT - RENOVATION/ALTERATION</a></p>
-<p>When to use APIs:</p>
+<p>Example: Chicago Building Permits: <a href="https://data.cityofchicago.org/resource/9pkb-4fbf.json?_permit_type=PERMIT%20-%20RENOVATION/ALTERATION"><code>https://data.cityofchicago.org/resource/9pkb-4fbf.json?_permit_type=PERMIT - RENOVATION/ALTERATION</code></a></p>
+<h4 id="when-to-use-apis">When to use APIs:</h4>
 <ul>
 <li>The data is frequently changing, and you want to get the most up-to-date</li>
-<li>You only need a subset of the full dataset. You can put a query in the endpoint and get back only what you need.</li>
+<li>You only need a subset of the full dataset. Often, you can put a query in the endpoint and get back only what you need.</li>
 </ul>
 <p>Usually data is <code>json</code> format but some websites have <code>csv</code> options.</p>
 </section>
@@ -273,11 +277,11 @@
 
 <h3 id="web-scraping">Web scraping</h3>
 <p>Sometimes there is no API and you need to get unstructured data from webpages directly. There are some tools for downloading webpages and parsing the raw HTML to extract data.</p>
-<p>R:</p>
+<h4 id="r-1">R:</h4>
 <ul>
 <li><a href="https://github.com/hadley/rvest">rvest</a></li>
 </ul>
-<p>Python:</p>
+<h4 id="python-1">Python:</h4>
 <ul>
 <li><a href="http://docs.python-requests.org/en/master/">requests</a> – for reading pages</li>
 <li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup4</a> – for parsing HTML</li>
@@ -294,8 +298,9 @@
 </ul>
 </section>
 <section id="storing-data" class="slide level2">
-<h2>2. Storing data</h2>
+<h2>3. Storing data</h2>
 <p>How to store your data so you can use it again later.</p>
+<h4 id="topics-2">Topics</h4>
 <ul>
 <li>Flat files</li>
 <li>Databases</li>
@@ -359,20 +364,20 @@
 <section class="slide level2">
 
 <h3 id="documentation">Documentation</h3>
-<p>Important because:</p>
+<h4 id="important-because">Important because:</h4>
 <ul>
 <li>Makes collaboration easier / makes collaboration possible</li>
 <li>You will remember when you did when you come back to it later</li>
 <li>Reduces mistakes</li>
 </ul>
-<p>What to document:</p>
+<h4 id="what-to-document">What to document:</h4>
 <ul>
 <li>Why you made certain decisions</li>
 <li>Key results</li>
 <li>Annotations for your code (comments)</li>
 <li>Write instructions for how to use your code (README, package documentation)</li>
 </ul>
-<p>Tools that make this easier:</p>
+<h4 id="tools-that-make-this-easier">Tools that make this easier:</h4>
 <ul>
 <li>Cookie Cutter Data Science – directory template for projects [<a href="https://drivendata.github.io/cookiecutter-data-science/">docs</a>]</li>
 <li>Rmarkdown – easily write reports with embedded R code and results (<a href="http://rmarkdown.rstudio.com/lesson-1.html">tutorial</a>)</li>
@@ -397,11 +402,11 @@
 <h3 id="version-control">Version Control</h3>
 <h4 id="code">Code</h4>
 <ul>
-<li><strong>Git</strong> is version-control software – the overwhelmingly most popular option. (<a href="https://try.github.io/levels/1/challenges/1">interactive tutorial</a>)</li>
+<li><strong>Git</strong> is version-control software – the most popular (<a href="https://try.github.io/levels/1/challenges/1">interactive tutorial</a>)</li>
 <li><strong>GitHub</strong> is a website that hosts (generally public) Git repositories. It’s where people share open-source code. (<a href="https://guides.github.com/activities/hello-world/">tutorial</a>)</li>
 </ul>
 <h4 id="project-documentation">Project documentation</h4>
-<p>Wikis are great for collaborative project documentation and usually have built-in revision tracking.</p>
+<p>Wikis: great for multiple collaborators, built-in revision tracking</p>
 <ul>
 <li><strong>GitHub built-in wiki</strong> – comes with each repo. For public, open-source projects.</li>
 <li><strong>MediaWiki</strong> – the software that powers Wikipedia.</li>
@@ -409,7 +414,7 @@
 </ul>
 <h4 id="data">Data</h4>
 <ul>
-<li>Git is for code, not for data.</li>
+<li><strong>Git is for code, not for data.</strong></li>
 <li>Not a solved problem. Active area of work. Some advanced tools:
 <ul>
 <li><a href="https://git-lfs.github.com/">Git Large File Storage</a></li>
@@ -421,12 +426,14 @@
 <section id="final-tips" class="slide level2">
 <h2>Final tips</h2>
 <p>When planning a project and selecting tools, keep in mind:</p>
-<ol type="1">
-<li><strong>Always try Google</strong> – If you need something, try googling it. Chances are that something will turn up.</li>
-<li><strong>Keep it simple</strong> – Simple systems usually work better than complicated ones.</li>
-<li><strong>Minimum viable products</strong> – Learn quickly. Test your ideas. Fail fast.</li>
-<li><strong>Consider sustainability</strong> – Sustain value over time. Product needs to be easily maintainable (possibly by others). Following best practices are important for this.</li>
-</ol>
+<h4 id="always-try-google">Always try Google</h4>
+<p>If you need something, try googling it. Chances are that something will turn up.</p>
+<h4 id="keep-it-simple">Keep it simple</h4>
+<p>Simple systems usually work better than complicated ones.</p>
+<h4 id="speed-to-value-and-iteration">Speed to value and iteration</h4>
+<p>Learn quickly. Test your ideas. Fail fast. Don’t wait until the end to find out something doesn’t work.</p>
+<h4 id="consider-sustainability">Consider sustainability</h4>
+<p>Product needs to be easily maintainable over time (possibly by others). Following best practices are important for this.</p>
 </section>
     </div>
   </div>

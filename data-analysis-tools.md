@@ -9,8 +9,10 @@ date: March 3, 2019 (last updated)
 **This content is open source!**
 
 - This deck: <https://jayqi.github.io/data-analysis-tools/>
-- Source code: <https://github.com/jayqi/data-analysis-tools>
+- Source: <https://github.com/jayqi/data-analysis-tools>
 - Document version (for easier reading): [data-analysis-tools.md](https://github.com/jayqi/data-analysis-tools/blob/master/data-analysis-tools.md)
+
+[![License: CC BY 4.0](https://i.creativecommons.org/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
 
 ---
 
@@ -24,10 +26,10 @@ A survey of general purpose data analysis tools accessible to non-experts.
 
 #### Sections
 
-1. Analyzing data
-2. Getting data
-3. Storing data
-4. Best practices
+1. [Analyzing data](#1-analyzing-data)
+2. [Getting data](#2-getting-data)
+3. [Storing data](#3-storing-data)
+4. [Best practices](#4-best-practices)
 
 ---
 
@@ -35,7 +37,7 @@ A survey of general purpose data analysis tools accessible to non-experts.
 
 When you already have some data that you want to get some value out of.
 
-Topics:
+#### Topics:
 
 - Spreadsheet applications
 - Programming / Code
@@ -193,15 +195,16 @@ Potential option if you need straightforward, professional-looking visualization
 
 Getting data can range in difficulty. If you're lucky, you can click a link and download a file.
 
-We'll cover:
+#### Topics
 
 - Common data portals
 - Hitting APIs
 - Scraping webpages
+- Data pipelining tools
 
-We'll finish up with a quick overview of data pipelining tools.
+---
 
-#### Some useful places to look for datasets
+### Data Portals
 
 - Institutional data portals (e.g., [City of Chicago](https://data.cityofchicago.org), [data.gov](https://www.data.gov/))
 - [Quandl](https://www.quandl.com/search?query=) -- economic and financial data (some free, some paid)
@@ -225,7 +228,7 @@ Key thing to know is that they have a standardized design, and you can use a **G
 Example: Chicago Building Permits: [`https://data.cityofchicago.org/resource/9pkb-4fbf.json?_permit_type=PERMIT - RENOVATION/ALTERATION`](https://data.cityofchicago.org/resource/9pkb-4fbf.json?_permit_type=PERMIT - RENOVATION/ALTERATION)
 
 
-When to use APIs:
+#### When to use APIs:
 
 - The data is frequently changing, and you want to get the most up-to-date
 - You only need a subset of the full dataset. Often, you can put a query in the endpoint and get back only what you need.
@@ -261,11 +264,11 @@ You just need a way to make GET requests. Recommended:
 
 Sometimes there is no API and you need to get unstructured data from webpages directly. There are some tools for downloading webpages and parsing the raw HTML to extract data.
 
-R:
+#### R:
 
 - [rvest](https://github.com/hadley/rvest)
 
-Python:
+#### Python:
 
 - [requests](http://docs.python-requests.org/en/master/) -- for reading pages
 - [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) -- for parsing HTML
@@ -284,9 +287,11 @@ potentially even running your analysis.
 
 ---
 
-## 2. Storing data
+## 3. Storing data
 
 How to store your data so you can use it again later.
+
+#### Topics
 
 - Flat files
 - Databases
@@ -350,20 +355,20 @@ Following best practices helps you get things done efficiently, make it easier t
 
 ### Documentation
 
-Important because:
+#### Important because:
 
 - Makes collaboration easier / makes collaboration possible
 - You will remember when you did when you come back to it later
 - Reduces mistakes
 
-What to document:
+#### What to document:
 
 - Why you made certain decisions
 - Key results
 - Annotations for your code (comments)
 - Write instructions for how to use your code (README, package documentation)
 
-Tools that make this easier:
+#### Tools that make this easier:
 
 - Cookie Cutter Data Science -- directory template for projects [[docs](https://drivendata.github.io/cookiecutter-data-science/)]
 - Rmarkdown -- easily write reports with embedded R code and results ([tutorial](http://rmarkdown.rstudio.com/lesson-1.html))
@@ -391,12 +396,12 @@ Software is constantly changing and updating. You want to be able to share exact
 
 #### Code
 
-- **Git** is version-control software -- the overwhelmingly most popular option. ([interactive tutorial](https://try.github.io/levels/1/challenges/1))
+- **Git** is version-control software -- the most popular ([interactive tutorial](https://try.github.io/levels/1/challenges/1))
 - **GitHub** is a website that hosts (generally public) Git repositories. It's where people share open-source code. ([tutorial](https://guides.github.com/activities/hello-world/))
 
 #### Project documentation
 
-Wikis are great for collaborative project documentation and usually have built-in revision tracking.
+Wikis: great for multiple collaborators, built-in revision tracking
 
 - **GitHub built-in wiki** -- comes with each repo. For public, open-source projects.
 - **MediaWiki** -- the software that powers Wikipedia.
@@ -416,7 +421,18 @@ Wikis are great for collaborative project documentation and usually have built-i
 
 When planning a project and selecting tools, keep in mind:
 
-1. **Always try Google** -- If you need something, try googling it. Chances are that something will turn up.
-2. **Keep it simple** -- Simple systems usually work better than complicated ones.
-3. **Speed to value and iteration** -- Learn quickly. Test your ideas. Fail fast.
-4. **Consider sustainability** -- Product needs to be easily maintainable (possibly by others). Following best practices are important for this.
+#### Always try Google
+
+If you need something, try googling it. Chances are that something will turn up.
+
+#### Keep it simple
+
+Simple systems usually work better than complicated ones.
+
+#### Speed to value and iteration
+
+Learn quickly. Test your ideas. Fail fast. Don't wait until the end to find out something doesn't work.
+
+#### Consider sustainability
+
+Product needs to be easily maintainable over time (possibly by others). Following best practices are important for this.
