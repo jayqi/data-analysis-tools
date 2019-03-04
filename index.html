@@ -43,9 +43,9 @@
 <h2>Before we begin</h2>
 <p><strong>This content is open source!</strong></p>
 <ul>
-<li>This deck: FILL ME IN</li>
+<li>This deck: <a href="https://jayqi.github.io/data-analysis-tools/" class="uri">https://jayqi.github.io/data-analysis-tools/</a></li>
 <li>Source code: <a href="https://github.com/jayqi/data-analysis-tools" class="uri">https://github.com/jayqi/data-analysis-tools</a></li>
-<li>Markdown version (for reference): FILL ME IN</li>
+<li>Document version (for easier reading): <a href="https://github.com/jayqi/data-analysis-tools/blob/master/data-analysis-tools.md">data-analysis-tools.md</a></li>
 </ul>
 </section>
 <section id="what-is-this-about" class="slide level2">
@@ -216,9 +216,11 @@
 <p>Getting data can range in difficulty. If you’re lucky, you can click a link and download a file.</p>
 <p>We’ll cover:</p>
 <ul>
+<li>Common data portals</li>
 <li>Hitting APIs</li>
 <li>Scraping webpages</li>
 </ul>
+<p>We’ll finish up with a quick overview of data pipelining tools.</p>
 <h4 id="some-useful-places-to-look-for-datasets">Some useful places to look for datasets</h4>
 <ul>
 <li>Institutional data portals (e.g., <a href="https://data.cityofchicago.org">City of Chicago</a>, <a href="https://www.data.gov/">data.gov</a>)</li>
@@ -278,6 +280,16 @@
 <ul>
 <li><a href="http://docs.python-requests.org/en/master/">requests</a> – for reading pages</li>
 <li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup4</a> – for parsing HTML</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="data-workflow-management">Data Workflow Management</h3>
+<p>If your data is being regularly updated, you may want to create scripts and jobs that can automate the process of pulling, transforming your data, and potentially even running your analysis.</p>
+<ul>
+<li><a href="https://airflow.apache.org/">Airflow</a> (Python)</li>
+<li><a href="https://github.com/spotify/luigi">Luigi</a> (Python)</li>
+<li><a href="https://ropensci.github.io/drake/">drake</a> (R)</li>
 </ul>
 </section>
 <section id="storing-data" class="slide level2">
@@ -356,11 +368,12 @@
 <ul>
 <li>Why you made certain decisions</li>
 <li>Key results</li>
-<li>Comment your code</li>
+<li>Annotations for your code (comments)</li>
 <li>Write instructions for how to use your code (README, package documentation)</li>
 </ul>
 <p>Tools that make this easier:</p>
 <ul>
+<li>Cookie Cutter Data Science – directory template for projects [(docs)(https://drivendata.github.io/cookiecutter-data-science/)]</li>
 <li>Rmarkdown – easily write reports with embedded R code and results (<a href="http://rmarkdown.rstudio.com/lesson-1.html">tutorial</a>)</li>
 <li>R Notebooks (RStudio) and Jupyter Notebooks – interactive coding that doubles as presentable report</li>
 <li>Roxygen2 (R) (<a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">vignette</a>), Python docstrings (<a href="http://www.pythonforbeginners.com/basics/python-docstrings">tutorial</a>) – for documenting packages you write</li>
@@ -371,8 +384,12 @@
 <h3 id="reproducibility">Reproducibility</h3>
 <p>Someone else should be able to use the <strong>same code</strong> and <strong>same data</strong> to generate the <strong>same results</strong>.</p>
 <p>This is a critical part of <strong>science</strong> part of data science. Others can understand what you did and check that it makes sense. It’s also important for coming back to an analysis later.</p>
-<p>One reason why documentation is important.</p>
-<p>Package dependency management is important part. Tools: - R: <code>packrat</code> - Python: <code>anaconda</code></p>
+<h4 id="package-dependency-management">Package Dependency Management</h4>
+<p>Software is constantly changing and updating. You want to be able to share exactly the versions of things you used.</p>
+<ul>
+<li>R: <code>packrat</code>, Microsoft’s MRAN</li>
+<li>Python: <code>anaconda</code></li>
+</ul>
 </section>
 <section class="slide level2">
 
@@ -392,7 +409,12 @@
 <h4 id="data">Data</h4>
 <ul>
 <li>Git is for code, not for data.</li>
-<li>Not a solved problem. Active area of work. (Recently popular: <a href="https://github.com/pachyderm/pachyderm">Pachyderm</a>)</li>
+<li>Not a solved problem. Active area of work. Some advanced tools:
+<ul>
+<li><a href="https://git-lfs.github.com/">Git Large File Storage</a></li>
+<li><a href="https://github.com/pachyderm/pachyderm">Pachyderm</a></li>
+<li><a href="https://github.com/iterative/dvc">DVC</a></li>
+</ul></li>
 </ul>
 </section>
 <section id="final-tips" class="slide level2">

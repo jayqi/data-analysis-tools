@@ -8,9 +8,9 @@ date: March 3, 2019 (last update)
 
 **This content is open source!**
 
-- This deck: FILL ME IN
+- This deck: <https://jayqi.github.io/data-analysis-tools/>
 - Source code: <https://github.com/jayqi/data-analysis-tools>
-- Markdown version (for reference): FILL ME IN
+- Document version (for easier reading): [data-analysis-tools.md](https://github.com/jayqi/data-analysis-tools/blob/master/data-analysis-tools.md)
 
 ---
 
@@ -194,8 +194,11 @@ Getting data can range in difficulty. If you're lucky, you can click a link and 
 
 We'll cover:
 
+- Common data portals
 - Hitting APIs
 - Scraping webpages
+
+We'll finish up with a quick overview of data pipelining tools.
 
 #### Some useful places to look for datasets
 
@@ -266,6 +269,18 @@ Python:
 
 - [requests](http://docs.python-requests.org/en/master/) -- for reading pages
 - [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) -- for parsing HTML
+
+---
+
+### Data Workflow Management
+
+If your data is being regularly updated, you may want to create scripts and jobs
+that can automate the process of pulling, transforming your data, and
+potentially even running your analysis.
+
+- [Airflow](https://airflow.apache.org/) (Python)
+- [Luigi](https://github.com/spotify/luigi) (Python)
+- [drake](https://ropensci.github.io/drake/) (R)
 
 ---
 
@@ -345,11 +360,12 @@ What to document:
 
 - Why you made certain decisions
 - Key results
-- Comment your code
+- Annotations for your code (comments)
 - Write instructions for how to use your code (README, package documentation)
 
 Tools that make this easier:
 
+- Cookie Cutter Data Science -- directory template for projects [(docs)(https://drivendata.github.io/cookiecutter-data-science/)]
 - Rmarkdown -- easily write reports with embedded R code and results ([tutorial](http://rmarkdown.rstudio.com/lesson-1.html))
 - R Notebooks (RStudio) and Jupyter Notebooks -- interactive coding that doubles as presentable report
 - Roxygen2 (R) ([vignette](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html)), Python docstrings ([tutorial](http://www.pythonforbeginners.com/basics/python-docstrings)) -- for documenting packages you write
@@ -362,10 +378,11 @@ Someone else should be able to use the **same code** and **same data** to genera
 
 This is a critical part of **science** part of data science. Others can understand what you did and check that it makes sense. It's also important for coming back to an analysis later.
 
-One reason why documentation is important.
+#### Package Dependency Management
 
-Package dependency management is important part. Tools:
-- R: `packrat`
+Software is constantly changing and updating. You want to be able to share exactly the versions of things you used.
+
+- R: `packrat`, Microsoft's MRAN
 - Python: `anaconda`
 
 ---
@@ -388,7 +405,10 @@ Wikis are great for collaborative project documentation and usually have built-i
 #### Data
 
 - Git is for code, not for data.
-- Not a solved problem. Active area of work. (Recently popular: [Pachyderm](https://github.com/pachyderm/pachyderm))
+- Not a solved problem. Active area of work. Some advanced tools:
+  - [Git Large File Storage](https://git-lfs.github.com/)
+  - [Pachyderm](https://github.com/pachyderm/pachyderm)
+  - [DVC](https://github.com/iterative/dvc)
 
 ---
 
