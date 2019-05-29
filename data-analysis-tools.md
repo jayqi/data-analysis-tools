@@ -274,6 +274,7 @@ Sometimes there is no API and you need to get unstructured data from webpages di
 
 - [requests](http://docs.python-requests.org/en/master/) -- for reading pages
 - [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) -- for parsing HTML
+- [Scrapy](https://scrapy.org/) -- for building spiders
 
 ---
 
