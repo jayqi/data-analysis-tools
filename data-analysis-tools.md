@@ -62,6 +62,7 @@ Ubiquitous; graphical interface; shallow learning curve for easy tasks
 - You need to eyeball your dataset all at once
 - If formatting, colored shading, or borders are useful for highlighting something
 - Manual data entry
+- Sharing with colleagues who would want to manipulate a spreadsheet
 
 #### Beware
 
